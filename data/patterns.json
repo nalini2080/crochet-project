@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Baby Whale Amigurumi",
+        "category": "Amigurumi",
+        "difficulty": "Beginner",
+        "estimatedTimeHours": 3.5,
+        "tags": [
+            "cute",
+            "animal",
+            "baby-safe"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Chunky Winter Scarf",
+        "category": "Accessories",
+        "difficulty": "Beginner",
+        "estimatedTimeHours": 5.0,
+        "tags": [
+            "minimalist",
+            "cozy",
+            "gift"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Granny Square Blanket",
+        "category": "HomeDecor",
+        "difficulty": "Intermediate",
+        "estimatedTimeHours": 20.0,
+        "tags": [
+            "floral",
+            "colorful",
+            "heirloom"
+        ]
+    }
+]
