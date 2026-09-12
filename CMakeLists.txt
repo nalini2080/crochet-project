@@ -24,11 +24,18 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
+FetchContent_Declare(
+    httplib
+    URL https://github.com/yhirose/cpp-httplib/archive/refs/tags/v0.18.3.tar.gz
+    DOWNLOAD_EXTRACT_TIMESTAMP true
+)
+FetchContent_MakeAvailable(httplib)
+
 enable_testing()
 
-add_executable(crochet main.cpp src/data/PatternRepository.cpp src/engine/Recommender.cpp)
+add_executable(crochet main.cpp src/data/PatternRepository.cpp src/engine/Recommender.cpp src/server/HttpServer.cpp)
 target_include_directories(crochet PRIVATE include)
-target_link_libraries(crochet PRIVATE nlohmann_json::nlohmann_json)
+target_link_libraries(crochet PRIVATE nlohmann_json::nlohmann_json httplib::httplib)
 
 add_executable(crochet_tests
     tests/test_recommender.cpp
