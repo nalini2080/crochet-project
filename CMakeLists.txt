@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.20)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 project(CrochetPlusPlus)
 
 set(CMAKE_CXX_STANDARD 20)
@@ -13,6 +15,6 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(json)
 
-add_executable(crochet main.cpp src/data/PatternRepository.cpp)
+add_executable(crochet main.cpp src/data/PatternRepository.cpp src/engine/Recommender.cpp)
 target_include_directories(crochet PRIVATE include)
 target_link_libraries(crochet PRIVATE nlohmann_json::nlohmann_json)
