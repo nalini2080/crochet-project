@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.20)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 project(CrochetPlusPlus)
+find_package(CURL REQUIRED)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -33,9 +34,9 @@ FetchContent_MakeAvailable(httplib)
 
 enable_testing()
 
-add_executable(crochet main.cpp src/data/PatternRepository.cpp src/engine/Recommender.cpp src/server/HttpServer.cpp)
+add_executable(crochet main.cpp src/data/PatternRepository.cpp src/engine/Recommender.cpp src/server/HttpServer.cpp src/ai/GeminiClient.cpp)
 target_include_directories(crochet PRIVATE include)
-target_link_libraries(crochet PRIVATE nlohmann_json::nlohmann_json httplib::httplib)
+target_link_libraries(crochet PRIVATE nlohmann_json::nlohmann_json httplib::httplib CURL::libcurl)
 
 add_executable(crochet_tests
     tests/test_recommender.cpp

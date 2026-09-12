@@ -4,6 +4,8 @@
 #include "crochet/data/PatternRepository.hpp"
 #include "crochet/engine/Recommender.hpp"
 
+#include "crochet/ai/GeminiClient.hpp"
+
 namespace crochet
 {
 
@@ -16,6 +18,7 @@ namespace crochet
     private:
         std::vector<Pattern> patterns_;
         std::unique_ptr<Recommender> recommender_;
+        std::unique_ptr<GeminiClient> geminiClient_;
     };
 
 } // namespace crochet
