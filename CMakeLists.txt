@@ -15,6 +15,27 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(json)
 
+FetchContent_Declare(
+    googletest
+    URL https://github.com/google/googletest/archive/refs/tags/v1.15.2.tar.gz
+    DOWNLOAD_EXTRACT_TIMESTAMP true
+)
+# Prevent GoogleTest from overriding our compiler/linker settings
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(googletest)
+
+enable_testing()
+
 add_executable(crochet main.cpp src/data/PatternRepository.cpp src/engine/Recommender.cpp)
 target_include_directories(crochet PRIVATE include)
 target_link_libraries(crochet PRIVATE nlohmann_json::nlohmann_json)
+
+add_executable(crochet_tests
+    tests/test_recommender.cpp
+    src/engine/Recommender.cpp
+)
+target_include_directories(crochet_tests PRIVATE include)
+target_link_libraries(crochet_tests PRIVATE gtest gtest_main)
+
+include(GoogleTest)
+gtest_discover_tests(crochet_tests)

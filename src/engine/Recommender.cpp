@@ -22,23 +22,24 @@ namespace crochet
         double totalScore = 0.0;
         double totalWeight = 0.0;
 
-        // Style match: fraction of desired styles present in pattern tags
-        double styleWeight = prefs.weights.count("style") ? prefs.weights.at("style") : 1.0;
-        int styleMatches = 0;
-        for (const auto &style : prefs.desiredStyles)
+        // Style match — only counts if the user actually specified desired styles
+        if (!prefs.desiredStyles.empty())
         {
-            if (std::find(p.tags.begin(), p.tags.end(), style) != p.tags.end())
+            double styleWeight = prefs.weights.count("style") ? prefs.weights.at("style") : 1.0;
+            int styleMatches = 0;
+            for (const auto &style : prefs.desiredStyles)
             {
-                styleMatches++;
+                if (std::find(p.tags.begin(), p.tags.end(), style) != p.tags.end())
+                {
+                    styleMatches++;
+                }
             }
+            double styleScore = static_cast<double>(styleMatches) / prefs.desiredStyles.size();
+            totalScore += styleScore * styleWeight;
+            totalWeight += styleWeight;
         }
-        double styleScore = prefs.desiredStyles.empty()
-                                ? 1.0
-                                : static_cast<double>(styleMatches) / prefs.desiredStyles.size();
-        totalScore += styleScore * styleWeight;
-        totalWeight += styleWeight;
 
-        // Time match: how close estimated time is to the user's max
+        // Time match — always relevant, since maxTimeHours always has a value
         double timeWeight = prefs.weights.count("time") ? prefs.weights.at("time") : 1.0;
         double timeScore = p.estimatedTimeHours <= prefs.maxTimeHours ? 1.0 : 0.0;
         totalScore += timeScore * timeWeight;
