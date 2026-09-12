@@ -1,4 +1,6 @@
 #include <iostream>
+#include "crochet/models/Pattern.hpp"
+#include "crochet/models/Preferences.hpp"
 
 int main()
 {
