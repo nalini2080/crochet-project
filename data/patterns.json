@@ -9,6 +9,19 @@
             "cute",
             "animal",
             "baby-safe"
+        ],
+        "instructionSteps": [
+            "Gather materials: worsted weight cotton yarn (blue + white), 4mm hook, fiberfill stuffing, stitch marker, yarn needle, embroidery floss for eyes.",
+            "Round 1: 6 sc in magic ring (6 sts).",
+            "Round 2: 2 sc in each st around (12 sts).",
+            "Round 3: *sc, 2 sc in next st* repeat around (18 sts).",
+            "Round 4: *2 sc, 2 sc in next st* repeat around (24 sts).",
+            "Rounds 5–10: sc in each st around, no increases (24 sts).",
+            "Round 11: *2 sc, sc2tog* repeat around (18 sts). Begin stuffing firmly.",
+            "Round 12: *sc, sc2tog* repeat around (12 sts).",
+            "Round 13: sc2tog around (6 sts). Fasten off, leaving a tail to close the opening.",
+            "Make tail fins: chain 8, sc in 2nd chain from hook and across. Fasten off and attach to the back of the body.",
+            "Embroider simple closed sleepy-eyes with black floss for a baby-safe finish. Weave in all ends."
         ]
     },
     {
@@ -21,6 +34,15 @@
             "minimalist",
             "cozy",
             "gift"
+        ],
+        "instructionSteps": [
+            "Gather materials: 3 skeins chunky/bulky weight yarn, 9mm hook, yarn needle.",
+            "Chain 21 to start your foundation row.",
+            "Row 1: Starting in the 2nd chain from hook, hdc across (20 sts). Chain 2, turn.",
+            "Row 2 onward: hdc in each st across (20 sts). Chain 2, turn.",
+            "Repeat the previous row until the scarf measures about 65 inches, or your desired length.",
+            "Fasten off and weave in all ends.",
+            "Optional: add fringe — cut 8-inch yarn strands, fold in half, pull through end stitches with a hook, and knot."
         ]
     },
     {
@@ -33,6 +55,16 @@
             "floral",
             "colorful",
             "heirloom"
+        ],
+        "instructionSteps": [
+            "Gather materials: worsted weight yarn in 4–5 colors, 5mm hook, yarn needle, scissors. Plan to make 48 squares for a throw blanket.",
+            "Round 1: Chain 4, join with a slip stitch to form a ring. Chain 3 (counts as dc), 2 dc in ring, chain 2, then repeat *3 dc, chain 2* three more times. Join and fasten off color A.",
+            "Round 2: Join color B in any chain-2 space. Work a corner (3 dc, chain 2, 3 dc) in each chain-2 space, with chain 1 and 3 dc between corners. Join, fasten off.",
+            "Round 3: Join color C. Repeat the corner pattern in each chain-2 space, working 3 dc in each chain-1 space along the sides. Join, fasten off.",
+            "Round 4: Join color D as your border round. Repeat as Round 3, adding one more side repeat per side. Join and weave in ends.",
+            "Assembly: arrange all squares in a 6×8 grid, alternating colors as desired.",
+            "Join squares with a whip stitch or slip stitch through both loops, working row by row, then joining the rows together.",
+            "Border: attach your final color around the entire perimeter, working 3 dc in each corner space and sc evenly along the edges for a clean finish."
         ]
     }
 ]

@@ -5,11 +5,12 @@
 #include <cstdlib>
 #include <iostream>
 #include <sstream>
+#include <thread>
+#include <chrono>
 
 namespace crochet
 {
 
-    // libcurl calls this repeatedly as response data arrives; we accumulate it into a string
     static size_t writeCallback(void *contents, size_t size, size_t nmemb, std::string *out)
     {
         size_t totalSize = size * nmemb;
@@ -27,7 +28,7 @@ namespace crochet
         apiKey_ = key;
     }
 
-    std::optional<std::string> GeminiClient::callGeminiApi(const std::string &prompt)
+    std::optional<std::string> GeminiClient::callGeminiApi(const std::string &prompt, int retriesLeft)
     {
         CURL *curl = curl_easy_init();
         if (!curl)
@@ -68,6 +69,13 @@ namespace crochet
             return std::nullopt;
         }
 
+        if (httpCode == 503 && retriesLeft > 0)
+        {
+            std::cerr << "Gemini API overloaded, retrying (" << retriesLeft << " left)..." << std::endl;
+            std::this_thread::sleep_for(std::chrono::milliseconds(800));
+            return callGeminiApi(prompt, retriesLeft - 1);
+        }
+
         if (httpCode != 200)
         {
             std::cerr << "Gemini API returned HTTP " << httpCode << ": " << responseBuffer << std::endl;
@@ -101,6 +109,54 @@ namespace crochet
         prompt << "\nWrite a short, friendly 2-3 sentence variation suggestion.";
 
         return callGeminiApi(prompt.str());
+    }
+
+    std::optional<std::vector<GeneratedIdea>> GeminiClient::generateIdeas(const Preferences &prefs, int count)
+    {
+        std::ostringstream prompt;
+        prompt << "Suggest " << count << " original crochet project ideas.\n"
+               << "Project type: " << projectTypeToString(prefs.desiredType) << "\n"
+               << "Difficulty: " << difficultyToString(prefs.desiredDifficulty) << "\n"
+               << "Preferred styles: ";
+        for (const auto &s : prefs.desiredStyles)
+            prompt << s << " ";
+        prompt << "\nRespond with ONLY a raw JSON array, no markdown formatting, no code fences. "
+               << "Each element must be an object with exactly two string fields: \"name\" and \"description\". "
+               << "The description should be 1-2 sentences.";
+
+        auto raw = callGeminiApi(prompt.str());
+        if (!raw)
+        {
+            return std::nullopt;
+        }
+
+        try
+        {
+            std::string text = *raw;
+            auto start = text.find('[');
+            auto end = text.rfind(']');
+            if (start == std::string::npos || end == std::string::npos)
+            {
+                return std::nullopt;
+            }
+            std::string jsonSlice = text.substr(start, end - start + 1);
+
+            auto parsed = nlohmann::json::parse(jsonSlice);
+            std::vector<GeneratedIdea> ideas;
+            for (const auto &item : parsed)
+            {
+                GeneratedIdea idea;
+                idea.name = item.at("name").get<std::string>();
+                idea.description = item.at("description").get<std::string>();
+                ideas.push_back(idea);
+            }
+            return ideas;
+        }
+        catch (const nlohmann::json::exception &e)
+        {
+            std::cerr << "Failed to parse generated ideas: " << e.what() << std::endl;
+            return std::nullopt;
+        }
     }
 
 } // namespace crochet

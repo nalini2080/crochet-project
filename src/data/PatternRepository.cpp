@@ -50,6 +50,7 @@ namespace crochet
             p.difficulty = parseDifficulty(item.at("difficulty").get<std::string>());
             p.estimatedTimeHours = item.at("estimatedTimeHours").get<double>();
             p.tags = item.at("tags").get<std::vector<std::string>>();
+            p.instructionSteps = item.at("instructionSteps").get<std::vector<std::string>>();
             patterns.push_back(p);
         }
 

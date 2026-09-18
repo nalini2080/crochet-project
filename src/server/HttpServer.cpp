@@ -25,6 +25,12 @@ namespace crochet
     void HttpServer::run(int port)
     {
         httplib::Server svr;
+        svr.set_default_headers({{"Access-Control-Allow-Origin", "*"}});
+        svr.Options(R"(.*)", [](const httplib::Request &, httplib::Response &res)
+                    {
+            res.set_header("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
+            res.set_header("Access-Control-Allow-Headers", "Content-Type");
+            res.status = 200; });
 
         svr.Post("/recommend", [this](const httplib::Request &req, httplib::Response &res)
                  {
@@ -84,6 +90,44 @@ namespace crochet
             }
 
             res.set_content(nlohmann::json{{"variation", *variation}}.dump(), "application/json");
+        } catch (const std::exception& e) {
+            res.status = 400;
+            res.set_content(nlohmann::json{{"error", e.what()}}.dump(), "application/json");
+        } });
+
+        svr.Get("/patterns", [this](const httplib::Request &, httplib::Response &res)
+                {
+        nlohmann::json response = nlohmann::json::array();
+        for (const auto& p : patterns_) {
+            response.push_back(patternToJson(p));
+        }
+        res.set_content(response.dump(), "application/json"); });
+
+        svr.Post("/ideas", [this](const httplib::Request &req, httplib::Response &res)
+                 {
+        if (!geminiClient_) {
+            res.status = 503;
+            res.set_content(nlohmann::json{{"error", "AI features are not configured"}}.dump(), "application/json");
+            return;
+        }
+
+        try {
+            auto body = nlohmann::json::parse(req.body);
+            Preferences prefs = jsonToPreferences(body);
+            int count = body.value("count", 3);
+
+            auto ideas = geminiClient_->generateIdeas(prefs, count);
+            if (!ideas) {
+                res.status = 502;
+                res.set_content(nlohmann::json{{"error", "AI service temporarily unavailable"}}.dump(), "application/json");
+                return;
+            }
+
+            nlohmann::json response = nlohmann::json::array();
+            for (const auto& idea : *ideas) {
+                response.push_back(ideaToJson(idea));
+            }
+            res.set_content(response.dump(), "application/json");
         } catch (const std::exception& e) {
             res.status = 400;
             res.set_content(nlohmann::json{{"error", e.what()}}.dump(), "application/json");

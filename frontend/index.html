@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Crochet++</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="stars"></div>
+
+    <header>
+        <h1>Crochet<span class="plus">++</span></h1>
+        <p class="subtitle">Find your next crochet project</p>
+    </header>
+
+    <main>
+        <section class="gallery-section">
+            <h2 class="gallery-title">Browse the Catalog</h2>
+            <div id="gallery" class="gallery"></div>
+        </section>
+
+        <section class="prefs">
+            <div class="field">
+                <h3>What do you want to make?</h3>
+                <div class="options" id="projectType">
+                    <button data-value="Amigurumi">Amigurumi</button>
+                    <button data-value="Clothing">Clothing</button>
+                    <button data-value="HomeDecor">Home Decor</button>
+                    <button data-value="Accessories">Accessories</button>
+                </div>
+            </div>
+
+            <div class="field">
+                <h3>Difficulty</h3>
+                <div class="options" id="difficulty">
+                    <button data-value="Beginner">Beginner</button>
+                    <button data-value="Intermediate">Intermediate</button>
+                    <button data-value="Advanced">Advanced</button>
+                </div>
+            </div>
+
+            <div class="field">
+                <h3>Style <span class="hint">(pick any)</span></h3>
+                <div class="options multi" id="styles">
+                    <button data-value="cute">Cute</button>
+                    <button data-value="minimalist">Minimalist</button>
+                    <button data-value="floral">Floral</button>
+                    <button data-value="colorful">Colorful</button>
+                    <button data-value="cozy">Cozy</button>
+                </div>
+            </div>
+
+            <div class="field">
+                <h3>Max time <span class="hint">(hours)</span></h3>
+                <input type="number" id="maxTime" value="10" min="0.5" step="0.5" />
+            </div>
+
+            <button id="findBtn" class="find-btn">✦ Find My Pattern ✦</button>
+        </section>
+
+        <section id="results"></section>
+
+        <section class="more-ideas-section">
+            <button id="moreIdeasBtn" class="find-btn secondary">✦ Generate More Ideas ✦</button>
+            <div id="ideasResults"></div>
+        </section>
+    </main>
+
+    <div id="stepModal" class="modal hidden">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">&times;</button>
+            <h2 id="modalTitle"></h2>
+            <div class="step-progress">
+                <span id="stepCounter"></span>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+            <p id="stepText" class="step-text"></p>
+            <div class="step-nav">
+                <button id="prevStep">← Previous</button>
+                <button id="nextStep">Next →</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

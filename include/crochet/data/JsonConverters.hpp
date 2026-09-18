@@ -72,7 +72,8 @@ namespace crochet
             {"category", projectTypeToString(p.category)},
             {"difficulty", difficultyToString(p.difficulty)},
             {"estimatedTimeHours", p.estimatedTimeHours},
-            {"tags", p.tags}};
+            {"tags", p.tags},
+            {"instructionSteps", p.instructionSteps}};
     }
 
     inline nlohmann::json resultToJson(const RecommendationResult &r)
@@ -99,6 +100,12 @@ namespace crochet
             }
         }
         return prefs;
+    }
+    inline nlohmann::json ideaToJson(const GeneratedIdea &idea)
+    {
+        return {
+            {"name", idea.name},
+            {"description", idea.description}};
     }
 
 } // namespace crochet
