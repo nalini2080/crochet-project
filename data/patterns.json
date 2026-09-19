@@ -66,5 +66,266 @@
             "Join squares with a whip stitch or slip stitch through both loops, working row by row, then joining the rows together.",
             "Border: attach your final color around the entire perimeter, working 3 dc in each corner space and sc evenly along the edges for a clean finish."
         ]
+    },
+    {
+        "id": 4,
+        "name": "Yarn Letter (Custom Monogram)",
+        "category": "HomeDecor",
+        "difficulty": "Beginner",
+        "estimatedTimeHours": 2.0,
+        "tags": [
+            "letters",
+            "personalized",
+            "decor",
+            "gift"
+        ],
+        "instructionSteps": [
+            "Gather materials: worsted weight yarn, 4mm hook, cardboard or foam letter template (or draw your own outline), yarn needle, hot glue (optional for mounting).",
+            "Chain a foundation long enough to trace the outer edge of your chosen letter shape.",
+            "Single crochet around the outline of the letter, working into each chain, to create a flat border outline.",
+            "Fill the interior with rows of single crochet, following the letter's shape, increasing or decreasing at curves and angles as needed to keep it flat.",
+            "For thicker, more dimensional letters, crochet a second matching panel and single crochet the two together around the edges, stuffing lightly as you close.",
+            "Weave in all ends and steam-block gently to flatten and even out the edges.",
+            "Optional: attach a small loop of yarn or ribbon at the top back for hanging, or add a felt backing for stability."
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Plarn Tote Bag",
+        "category": "Accessories",
+        "difficulty": "Intermediate",
+        "estimatedTimeHours": 6.0,
+        "tags": [
+            "plarn",
+            "eco-friendly",
+            "bag",
+            "upcycled"
+        ],
+        "instructionSteps": [
+            "Prepare plarn: flatten 15-20 plastic shopping bags, cut off handles and bottom seams, cut into 1-inch loops, and link the loops together into one continuous 'plarn' yarn ball.",
+            "Using an 8-9mm hook (larger than usual, since plarn is thicker and less flexible than yarn), chain a foundation matching your desired bag width.",
+            "Row 1: single crochet across the foundation chain.",
+            "Rows 2 onward: single crochet in each stitch across, building up the body of the bag in rows until it reaches your desired height, then fold in half to form the bag body (or work in the round from the base up).",
+            "Work the base: if working flat, fold the rectangle in half and single crochet the side seams together, leaving the top open.",
+            "Handles: chain a long strip (about 20 inches) and single crochet back across for two sturdy straps; attach one to each side of the bag opening with slip stitches.",
+            "Weave in all plarn ends carefully, tucking them into the stitches since plarn doesn't weave in as smoothly as yarn."
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Teddy Bear Amigurumi",
+        "category": "Amigurumi",
+        "difficulty": "Intermediate",
+        "estimatedTimeHours": 5.0,
+        "tags": [
+            "cute",
+            "animal",
+            "gift",
+            "amigurumi"
+        ],
+        "instructionSteps": [
+            "Gather materials: worsted weight yarn (tan or brown + accent color), 4mm hook, fiberfill stuffing, safety eyes, yarn needle, stitch marker.",
+            "Head: Round 1: 6 sc in magic ring (6). Round 2: 2 sc in each st (12). Round 3: *sc, 2 sc in next* repeat (18). Round 4: *2 sc, 2 sc in next* repeat (24). Rounds 5-9: sc around (24). Decrease gradually over the next several rounds while stuffing firmly, closing at 6 sts.",
+            "Ears: make two small flat circles (6 sc in magic ring, then 2 sc in each st for one more round), fold in half and sew to the head.",
+            "Body: work similarly to the head but slightly larger, starting and ending with a smaller stitch count, stuffing firmly as you close.",
+            "Arms and legs: make four small tube shapes (magic ring start, a few rounds of even single crochet, stuff lightly), leaving an opening to attach to the body.",
+            "Assembly: attach safety eyes to the head before stuffing, sew the head to the body, then sew on the arms and legs.",
+            "Embroider a simple nose and mouth with dark yarn or floss, and add any accent details like a bow or sweater patch."
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Simple Crochet Flower",
+        "category": "HomeDecor",
+        "difficulty": "Beginner",
+        "estimatedTimeHours": 0.5,
+        "tags": [
+            "floral",
+            "simple",
+            "applique",
+            "quick"
+        ],
+        "instructionSteps": [
+            "Gather materials: small amount of worsted weight yarn in two colors, 4mm hook, yarn needle.",
+            "Magic ring, chain 1, then work 5 single crochet into the ring.",
+            "Slip stitch to close the ring, leaving a small center hole or filling it with a contrast color French knot.",
+            "For each petal: chain 3, skip a stitch, slip stitch into the next stitch around the ring — repeat until you have 5 petal loops.",
+            "Work back through each chain-3 loop with (slip stitch, half double crochet, double crochet, half double crochet, slip stitch) to form a rounded petal shape.",
+            "Fasten off and weave in ends. Attach to a hair clip, pin back, or sew onto a larger project as an accent."
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Crochet Rose",
+        "category": "HomeDecor",
+        "difficulty": "Intermediate",
+        "estimatedTimeHours": 1.5,
+        "tags": [
+            "floral",
+            "rose",
+            "detailed",
+            "gift"
+        ],
+        "instructionSteps": [
+            "Gather materials: worsted or DK weight yarn in a rose color, 3.5-4mm hook, yarn needle, floral wire (optional, for a stem).",
+            "Chain a long foundation row (approximately 40-50 stitches) — this strip will be rolled up to form the rose petals.",
+            "Row 1: starting in the 2nd chain from hook, work (sc, hdc, dc, dc, hdc, sc) in a repeating scallop pattern along the chain to create a ruffled petal edge.",
+            "Fasten off, leaving a long tail for sewing.",
+            "Beginning at one end, tightly roll the ruffled strip into a spiral, using the long tail to stitch through the base of each layer as you roll to hold the rose shape together.",
+            "Once fully rolled and secured, weave in the tail through the base of the rose.",
+            "Optional: crochet a simple leaf (chain a few stitches, sc and hdc back along one side, sc down the other) and attach to the base, or insert floral wire through the base for a stem."
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Mini Crochet Bag/Purse",
+        "category": "Accessories",
+        "difficulty": "Intermediate",
+        "estimatedTimeHours": 3.5,
+        "tags": [
+            "bag",
+            "mini",
+            "cute",
+            "gift"
+        ],
+        "instructionSteps": [
+            "Gather materials: worsted weight cotton yarn, 4mm hook, small button or magnetic clasp, yarn needle, optional lining fabric.",
+            "Base: chain 10, then single crochet around the entire chain (working into both sides) to form an oval base.",
+            "Build the sides: continue single crocheting in a spiral upward without increasing, for about 4-5 inches, to form the bag body.",
+            "Shape the flap: on one side of the bag opening, work single crochet rows back and forth, decreasing occasionally, to form a rounded flap that folds over the front.",
+            "Strap: chain a long strip (adjust length to preference — shoulder or crossbody), single crochet back across for a sturdy strap, and attach both ends to the sides of the bag.",
+            "Attach a button or clasp to the flap and a corresponding loop or button on the bag front to keep it closed.",
+            "Weave in all ends. Optional: sew in a fabric lining for extra structure and to prevent stretching."
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Crochet Piano/Keyboard Cover",
+        "category": "HomeDecor",
+        "difficulty": "Intermediate",
+        "estimatedTimeHours": 8.0,
+        "tags": [
+            "cover",
+            "practical",
+            "home",
+            "music"
+        ],
+        "instructionSteps": [
+            "Measure your piano or keyboard's length and width to determine the final cover dimensions.",
+            "Gather materials: worsted or DK weight yarn (enough for the full measured area), 4-5mm hook, yarn needle, optional fabric backing.",
+            "Chain a foundation matching your keyboard's length.",
+            "Work in rows of your chosen stitch pattern (double crochet or half double crochet work up quickly for larger pieces), maintaining an even stitch count each row.",
+            "Continue row by row until the piece measures the full width needed to drape over and cover the keys.",
+            "Add a simple decorative border around all edges with single crochet or a shell stitch for a finished look.",
+            "Weave in all ends and block the piece flat to ensure even edges and proper drape over the instrument.",
+            "Optional: add small weighted corners or a fabric lining underneath for a cleaner drape and to prevent slipping."
+        ]
+    },
+    {
+        "id": 11,
+        "name": "Classic Granny Square Throw (Your Version)",
+        "category": "HomeDecor",
+        "difficulty": "Intermediate",
+        "estimatedTimeHours": 18.0,
+        "tags": [
+            "granny-square",
+            "blanket",
+            "colorful",
+            "heirloom"
+        ],
+        "instructionSteps": [
+            "Gather materials: worsted weight yarn in your chosen color palette, 5mm hook, yarn needle, scissors.",
+            "Decide on your finished size and calculate the number of squares needed (typically a 6x8 or 7x9 grid for a throw).",
+            "Round 1: chain 4, join into a ring. Chain 3, 2 dc, chain 2, then repeat (3 dc, chain 2) three more times around. Join and fasten off.",
+            "Rounds 2-4: join a new color in any corner space each round, working (3 dc, chain 2, 3 dc) in every corner and 3 dc in each side space, joining and fastening off after each round.",
+            "Repeat until you have enough squares, keeping your color sequence consistent for a cohesive look.",
+            "Block each square lightly to even out the edges before joining.",
+            "Join squares in rows using a whip stitch or join-as-you-go slip stitch method, then join the rows together.",
+            "Add a final border round around the entire blanket for a clean, finished edge."
+        ]
+    },
+    {
+        "id": 12,
+        "name": "Water Bottle Sleeve",
+        "category": "Accessories",
+        "difficulty": "Beginner",
+        "estimatedTimeHours": 1.5,
+        "tags": [
+            "practical",
+            "sleeve",
+            "gift",
+            "quick"
+        ],
+        "instructionSteps": [
+            "Gather materials: worsted weight yarn, 4-4.5mm hook, yarn needle, your water bottle for sizing reference.",
+            "Chain enough stitches to wrap around the base of your water bottle, join into a ring with a slip stitch (careful not to twist the chain).",
+            "Round 1: single crochet in each chain around.",
+            "Rounds 2 onward: continue single crochet in a spiral (or joined rounds) upward, periodically checking the fit against your bottle, until you reach the desired height.",
+            "For the top edge, switch to a stretchier stitch like half double crochet in back loops only for a couple rounds, or add a drawstring channel if desired.",
+            "Optional: crochet a simple strap (chain a length, sc back across) and attach to two sides for carrying.",
+            "Weave in all ends and try the sleeve on your bottle to confirm a snug fit."
+        ]
+    },
+    {
+        "id": 13,
+        "name": "Crochet Coasters",
+        "category": "HomeDecor",
+        "difficulty": "Beginner",
+        "estimatedTimeHours": 0.75,
+        "tags": [
+            "coasters",
+            "home",
+            "quick",
+            "gift"
+        ],
+        "instructionSteps": [
+            "Gather materials: worsted weight cotton yarn (cotton is preferred for absorbency and durability), 4mm hook, yarn needle.",
+            "Magic ring, chain 1 (does not count as a stitch), then work 8 single crochet into the ring. Slip stitch to join.",
+            "Round 2: chain 1, 2 sc in each stitch around (16 sts). Slip stitch to join.",
+            "Round 3: chain 1, *sc, 2 sc in next st* repeat around (24 sts). Slip stitch to join.",
+            "Round 4 (optional, for a larger coaster): chain 1, *2 sc, 2 sc in next st* repeat around (32 sts). Slip stitch to join.",
+            "Fasten off, leaving a short tail, and weave in all ends.",
+            "Repeat to make a matching set — 4 or 6 coasters is a typical set size."
+        ]
+    },
+    {
+        "id": 14,
+        "name": "Crochet Soap Saver Sack",
+        "category": "Accessories",
+        "difficulty": "Beginner",
+        "estimatedTimeHours": 1.0,
+        "tags": [
+            "soap-saver",
+            "eco-friendly",
+            "gift",
+            "quick"
+        ],
+        "instructionSteps": [
+            "Gather materials: cotton yarn (important — cotton is durable and won't hold odor like synthetic fibers), 4mm hook, yarn needle.",
+            "Chain 20 (adjust based on your bar of soap's size), join into a ring with a slip stitch, careful not to twist.",
+            "Round 1: single crochet in each chain around.",
+            "Rounds 2-10: continue single crochet in a spiral, working in an open, airy stitch pattern (such as skipping every other stitch, or working in a mesh/filet pattern) to allow water and air to pass through for faster drying.",
+            "As you near the top, begin decreasing gradually to taper the opening, or switch to a drawstring channel for a closable pouch.",
+            "For a drawstring: work a round of chain-1, skip-1 spaces, then thread a crocheted or purchased cord through for a cinch closure.",
+            "Fasten off, weave in all ends, and add a hanging loop at the top if you'd like to hang it to dry between uses."
+        ]
+    },
+    {
+        "id": 15,
+        "name": "Headband",
+        "category": "Clothing",
+        "difficulty": "Beginner",
+        "estimatedTimeHours": 1.0,
+        "tags": [
+            "small",
+            "gift",
+            "quick",
+            "easy"
+        ],
+        "instructionSteps": [
+            "Make a slip knot and create a foundation chain that matches your desired headband width.",
+            "Crochet your first row of stitches into the chain starting from the second chain from your hook.",
+            "Chain up, turn your work, and repeat rows of stitches in the back loops until the strip fits your head.Wrap the long rectangular strip around your head to check the fit before finishing.Cut your yarn, leave a tail, and sew the short ends together to close the headband loop."
+        ]
     }
 ]

@@ -53,7 +53,7 @@ namespace crochet
         curl_easy_setopt(curl, CURLOPT_POSTFIELDS, requestBodyStr.c_str());
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, writeCallback);
         curl_easy_setopt(curl, CURLOPT_WRITEDATA, &responseBuffer);
-        curl_easy_setopt(curl, CURLOPT_TIMEOUT, 15L);
+        curl_easy_setopt(curl, CURLOPT_TIMEOUT, 30L);
 
         CURLcode res = curl_easy_perform(curl);
 
@@ -114,15 +114,16 @@ namespace crochet
     std::optional<std::vector<GeneratedIdea>> GeminiClient::generateIdeas(const Preferences &prefs, int count)
     {
         std::ostringstream prompt;
-        prompt << "Suggest " << count << " original crochet project ideas.\n"
+        prompt << "Suggest " << count << " short, original crochet project ideas.\n"
                << "Project type: " << projectTypeToString(prefs.desiredType) << "\n"
                << "Difficulty: " << difficultyToString(prefs.desiredDifficulty) << "\n"
                << "Preferred styles: ";
         for (const auto &s : prefs.desiredStyles)
             prompt << s << " ";
-        prompt << "\nRespond with ONLY a raw JSON array, no markdown formatting, no code fences. "
-               << "Each element must be an object with exactly two string fields: \"name\" and \"description\". "
-               << "The description should be 1-2 sentences.";
+        prompt << "\nBe concise. Respond with ONLY a raw JSON array, no markdown formatting, no code fences. "
+               << "Each element must be an object with exactly three fields: "
+               << "\"name\" (string), \"description\" (one short sentence), and "
+               << "\"instructionSteps\" (an array of exactly 4 brief steps, one sentence each).";
 
         auto raw = callGeminiApi(prompt.str());
         if (!raw)
@@ -148,6 +149,7 @@ namespace crochet
                 GeneratedIdea idea;
                 idea.name = item.at("name").get<std::string>();
                 idea.description = item.at("description").get<std::string>();
+                idea.instructionSteps = item.value("instructionSteps", std::vector<std::string>{});
                 ideas.push_back(idea);
             }
             return ideas;

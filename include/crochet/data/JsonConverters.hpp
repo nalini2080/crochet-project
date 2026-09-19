@@ -105,7 +105,8 @@ namespace crochet
     {
         return {
             {"name", idea.name},
-            {"description", idea.description}};
+            {"description", idea.description},
+            {"instructionSteps", idea.instructionSteps}};
     }
 
 } // namespace crochet

@@ -256,7 +256,7 @@ document.getElementById("moreIdeasBtn").addEventListener("click", async () => {
         desiredType: state.projectType,
         desiredStyles: [...state.styles],
         maxTimeHours: parseFloat(document.getElementById("maxTime").value) || 10,
-        count: 4,
+        count: 3,
     };
 
     try {
@@ -265,16 +265,28 @@ document.getElementById("moreIdeasBtn").addEventListener("click", async () => {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload),
         });
-        const data = await res.json();
+        const ideas = await res.json();
 
         if (!res.ok) {
-            ideasEl.innerHTML = `<p class="error">${data.error}</p>`;
+            ideasEl.innerHTML = `<p class="error">${ideas.error}</p>`;
             return;
         }
 
-        ideasEl.innerHTML = data.map(
-            (idea) => `<div class="idea-card"><h4>${idea.name}</h4><p>${idea.description}</p></div>`
+        ideasEl.innerHTML = ideas.map(
+            (idea, i) => `
+        <div class="idea-card">
+          <h4>${idea.name}</h4>
+          <p>${idea.description}</p>
+          <button class="idea-steps-btn" data-index="${i}">View Instructions</button>
+        </div>`
         ).join("");
+
+        document.querySelectorAll(".idea-steps-btn").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                const idea = ideas[parseInt(btn.dataset.index)];
+                openStepModal({ name: idea.name, instructionSteps: idea.instructionSteps });
+            });
+        });
     } catch {
         ideasEl.innerHTML = `<p class="error">Could not reach the server.</p>`;
     }

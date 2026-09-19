@@ -13,6 +13,7 @@ namespace crochet
     {
         std::string name;
         std::string description;
+        std::vector<std::string> instructionSteps;
     };
 
     class GeminiClient

@@ -440,3 +440,19 @@ h1 .plus {
     font-size: 0.9rem;
     line-height: 1.5;
 }
+
+.idea-card .idea-steps-btn {
+    margin-top: 0.75rem;
+    padding: 0.5rem 0.9rem;
+    border-radius: 8px;
+    border: 1px solid var(--gold);
+    background: transparent;
+    color: var(--gold);
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.idea-card .idea-steps-btn:hover {
+    background: rgba(244, 197, 66, 0.15);
+}
